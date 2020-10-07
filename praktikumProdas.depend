@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1602059527 source:/home/kholiqul/Documents/C++/praktikumProdas/main.cpp
+	<iostream>
+	<conio.h>
+	<curses.h>
+
