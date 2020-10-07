@@ -34,14 +34,6 @@ int textOut(string text){
 
 }
 
-int calculateNow(float d, float t){
-    const float phi = 3.14;
-    int h = phi * d * t;
-
-    return h;
-
-}
-
 
 int main(void){
 
