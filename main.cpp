@@ -34,6 +34,7 @@ int textOut(string text){
 
 }
 
+
 int main(void){
 
 
