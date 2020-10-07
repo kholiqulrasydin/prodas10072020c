@@ -34,19 +34,9 @@ int textOut(string text){
 
 }
 
-int calculateNow(float d, float t){
-    const float phi = 3.14;
-    int h = phi * d * t;
-
-    return h;
-
-}
-
-
 int main(void){
 
-    bool retry = false;
-    //string key = '';
+
     tm* j1;
     tm* j2;
     const int det = 3600;
@@ -72,7 +62,7 @@ int main(void){
         j1m = j1->tm_min;
         j1h = j1->tm_hour;
 
-        textOut("Tekan Enter jika ingin menghentikan billing");
+        textOut("Tekan Enter jika ingin menghentikan billing ..... ");
         if(cin.get() == '\n'){
             time_t thistime = time(NULL);
             tm* localtm = localtime(&thistime);
@@ -89,12 +79,21 @@ int main(void){
             jumlahDetik = (totalInSecond % det) % 60;
             jumlahBayar = tarifPerjam / det * totalInSecond;
 
+            textOut("\nBilling telah dihentikan .... ");
+
             textOut("\n\n");
             hashOut();
+            hashOut();
+            cout << "Anda Mulai Menggunakan billing pada pukul: " << j1h << "." << j1m<< " lebih " << j1s << " detik" << endl;
+            cout << "Anda Berhenti Menggunakan billing pada pukul: " << j2h<< "." << j2m << " lebih " << j2s << " detik" << endl;
             hashOut();
             cout << "anda telah menggunakan billing selama " << jumlahJam << " Jam " << jumlahMenit << " Menit " << jumlahDetik << " Detik" << endl;
             cout << "total bayar anda sesudah menggunakan billing yaitu Rp. " << jumlahBayar << ",-" << endl;
             hashOut();
+        } else {
+
+            textOut("anda memencet tombol selain enter, penghitungan dibatalkan");
+
         }
     } else if(cin.get() != '\n'){
 
